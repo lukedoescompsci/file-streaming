@@ -1,0 +1,12 @@
+with open('data.txt', 'r') as file:
+
+  content = file.read().strip()
+  numbers = content.split()
+
+  convertedNumbers = [float(num) for num in numbers]
+
+total = sum(convertedNumbers)
+count = len(convertedNumbers)
+
+average = total / count
+print("The average of the numbers in 'data.txt' is " + str(average))
