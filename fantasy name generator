@@ -1,0 +1,30 @@
+import random
+
+
+def readNames(filename):
+    with open(filename, 'r') as file:
+        names = file.read().splitlines()
+    return names
+
+maleNames = readNames("maleNames.txt")
+femaleNames = readNames("femaleNames.txt")
+lastNames = readNames("lastNames.txt")
+
+choice = input("Choose either (m)ale or (f)emale names: ")
+
+if choice == "m":
+    names = maleNames
+    print("Outputting 10 male names")
+elif choice == "f":
+    names = femaleNames
+    print("Outputting 10 female names")
+else:
+    print("Invalid choice")
+    exit()
+
+
+for _ in range(10):
+    firstName = random.choice(names)
+    lastName = random.choice(lastNames)
+    fullName = firstName + " " + lastName
+    print(fullName)
